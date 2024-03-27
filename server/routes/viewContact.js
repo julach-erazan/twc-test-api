@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { StudentModel } = require("../models/studentSchema");
+const { ContactModel } = require("../models/contactSchema");
 
 router.get("/", async (req, res) => {
   try {
@@ -8,9 +8,9 @@ router.get("/", async (req, res) => {
       return res.status(400).send({ message: error.details[0].massage });
     }
 
-    const student = await StudentModel.find();
+    const contacts = await ContactModel.find();
 
-    res.status(201).json({ data: student });
+    res.status(201).json({ data: contacts });
   } catch (error) {
     res.status(500).json({ message: "Internal Server Error" });
     return;
