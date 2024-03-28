@@ -12,6 +12,7 @@ router.post("/", async (req, res) => {
 
     // Check if the email exists
     const email = req.body.email.toLowerCase();
+    
     const user = await AdminModel.findOne({ email: email });
 
     if (!user) {

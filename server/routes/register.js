@@ -6,6 +6,7 @@ router.post("/", async (req, res) => {
   try {
     const email = req.body.email.toLowerCase();
     // Check if email already exists
+    
     const existingEmail = await AdminModel.findOne({ email: email });
     if (existingEmail) {
       res.status(401).json({ message: "Email already exists!" });

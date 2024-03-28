@@ -3,7 +3,6 @@ const { ContactModel } = require("../models/contactSchema");
 
 router.post("/", async (req, res) => {
   try {
-    console.log(req.body);
     await ContactModel.create(req.body);
 
     res
