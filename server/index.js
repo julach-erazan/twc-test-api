@@ -5,11 +5,11 @@ require("dotenv").config();
 const app = express();
 
 const registerRoutes = require("./routes/register");
-const loginRoutes = require("./routes/login"); 
+const loginRoutes = require("./routes/login");
 const addContactRoutes = require("./routes/addContact");
 const viewContactRoutes = require("./routes/viewContact");
 const deleteContactRoutes = require("./routes/deleteContact");
-// const updateStudentRoutes = require("./routes/updateStudent");
+const updateContactRoutes = require("./routes/updateContact");
 
 //database connection
 require("./db");
@@ -28,7 +28,7 @@ app.use("/login", loginRoutes);
 app.use("/addcontact", addContactRoutes);
 app.use("/viewcontact", viewContactRoutes);
 app.use("/deletecontact", deleteContactRoutes);
-// app.use("/updatestudent", updateStudentRoutes); 
+app.use("/updatecontact", updateContactRoutes);
 
 app.listen(port, () => {
   console.log("Server Listnning...", { port });
